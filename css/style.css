@@ -1,0 +1,298 @@
+/* =========================
+   MODERN COLOR SYSTEM
+========================= */
+
+:root {
+    --primary: #6d28d9;
+    --secondary: #06b6d4;
+    --bg1: #eef2ff;
+    --bg2: #f0f9ff;
+
+    --card: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+
+    --shadow: 0 15px 35px rgba(0,0,0,0.12);
+    --radius: 16px;
+}
+
+/* =========================
+   BACKGROUND (MODERN DESIGN)
+========================= */
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, var(--bg1), var(--bg2));
+    min-height: 100vh;
+    color: var(--text);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* floating background shapes */
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--primary);
+    opacity: 0.08;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+body::before {
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    bottom: -120px;
+    right: -120px;
+    background: var(--secondary);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.top-header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 18px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 2;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+/* =========================
+   NAVBAR WITH ICONS
+========================= */
+
+.navbar {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 25px;
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 2;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--muted);
+    margin-left: 15px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.navbar a i {
+    margin-right: 5px;
+}
+
+.navbar a:hover {
+    color: var(--primary);
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.container {
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+
+.sidebar {
+    width: 240px;
+    background: white;
+    min-height: 100vh;
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+.sidebar h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: var(--text);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.sidebar a i {
+    margin-right: 8px;
+}
+
+.sidebar a:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+    flex: 1;
+    padding: 30px;
+}
+
+.page-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   CARDS (MODERN LOOK)
+========================= */
+
+.card {
+    background: var(--card);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card i {
+    color: var(--primary);
+    margin-right: 8px;
+}
+
+.card p {
+    color: var(--muted);
+}
+
+/* STATUS BADGES */
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+}
+
+.pending { background: var(--warning); }
+.submitted { background: var(--secondary); }
+.graded { background: var(--success); }
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-wrapper {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 360px;
+    background: white;
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.login-box i {
+    font-size: 40px;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* BUTTON */
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-container {
+    width: 420px;
+    margin: 50px auto;
+    background: white;
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.form-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}
