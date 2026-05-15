@@ -33,4 +33,27 @@ app.get("/submissions", (req, res) => {
 
 app.listen(5000, () => {
     console.log("Server running on port 5000");
+    let submissions = []; // already existing
+
+// Instructor: Get all submissions
+app.get("/instructor/submissions", (req, res) => {
+    res.json(submissions);
+});
+
+// Instructor: Grade submission
+app.post("/instructor/grade", (req, res) => {
+    const { studentName, grade, feedback } = req.body;
+
+    let student = submissions.find(s => s.studentName === studentName);
+
+    if (!student) {
+        return res.status(404).send("Student not found");
+    }
+
+    student.grade = grade;
+    student.feedback = feedback;
+    student.status = "Reviewed";
+
+    res.send("Grade added successfully");
+});
 });
